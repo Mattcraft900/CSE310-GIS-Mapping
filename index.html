@@ -4,31 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
-
     <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-        }
+      html,
+      body,
+      #map-div {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
     </style>
 
-    <!-- The esriConfig variable must be defined before adding the other esri libraries -->
-    <script>
-        var esriConfig = {
-            apiKey: "AAPTaDyQWmtzlR6cG6o8OZObS7w..KBqbdhb1irZYqrpXFuXmGmDcwNWYvPnhuukMMY29OJCvjREkTNe04EuSFWkvxQmgdD006BXpCD7tZ66CyOutZ3tUWc9FiG4Ds2KIvnDJZawsQx_bYFRwJ9WeKTIdOKwLGq5PdaobtWRIv4i0oXoLXnVXZ0Vcwuiz70rbZXyaWVbk3HDsOpzBongTU-kkGiCqruRi8olEvpJL8fbozAYGa6BAmjteqrJWylIcA42w4g8Mja6jdGqaMamNzuw85ok.AT1_GrVi93q8",
-        };
-    </script>
+    <link rel="stylesheet" href="https://js.arcgis.com/5.0/esri/themes/light/main.css" />
     <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
     <script type="module" src="https://js.arcgis.com/5.0/"></script>
+    <script type="module" src="markers.js"></script>
 
 </head>
 
 <body>
-
-    <arcgis-map basemap="arcgis/community" center="-111.78311813556628, 43.81768993455273" zoom="16">
+    <div id="map-div"></div>
+    <!-- <arcgis-map basemap="arcgis/community" center="-111.78311813556628, 43.81768993455273" zoom="16">
         <arcgis-zoom slot="top-left"></arcgis-zoom>
-    </arcgis-map>
+    </arcgis-map> -->
 
 </body>
 
