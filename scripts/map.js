@@ -1,3 +1,5 @@
+import { landmarkList } from "./marker-list.js";
+
 const [esriConfig, Map, MapView, Graphic, GraphicsLayer] =
     await $arcgis.import([
         "@arcgis/core/config.js",
@@ -25,34 +27,31 @@ const view = new MapView({
 const graphicsLayer = new GraphicsLayer();
 map.add(graphicsLayer);
 
-const point = {
-    type: "point",
-    longitude: -111.78311813556628,
-    latitude: 43.81768993455273,
-};
-
-const simpleMarkerSymbol = {
+const blueMapPinSymbol = {
     type: "simple-marker",
-    color: [0, 0, 0],
-    outline: {
-        color: [255, 255, 255],
-        width: 1,
-    },
+    path: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z",
+    color: [0, 82, 110],
+    size: "32px",
+    yoffset: "16px", // <- Make sure this is just half of the size
 };
 
-const attributes = {
-    name: "Point",
-    description: "I am a point",
-};
+landmarkList.forEach(landmark => {
+    const landmarkGraphic = new Graphic({
+        geometry: {
+            type: "point",
+            longitude: landmark.longitude,
+            latitude: landmark.latitude,
+        },
+        symbol: blueMapPinSymbol,
+        attributes: {
+            name: landmark.name,
+            description: landmark.description,
+        },
+        popupTemplate: {
+            title: landmark.name,
+            content: landmark.description,
+        },
+    });
 
-const pointGraphic = new Graphic({
-    geometry: point,
-    symbol: simpleMarkerSymbol,
-    attributes: attributes,
-    popupTemplate: {
-        title: attributes.name,
-        content: attributes.description,
-    },
+    graphicsLayer.add(landmarkGraphic);
 });
-
-graphicsLayer.add(pointGraphic);
