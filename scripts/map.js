@@ -12,7 +12,7 @@ const [esriConfig, Map, MapView, Graphic, GraphicsLayer] =
 
 // Set the API key
 // Hard-coded because I'm not really concerned about security for the scope of this project (plus it's only authorized to be used by localhost and my GitHub page)
-esriConfig.apiKey = "AAPTa7_sqtUyKfi24m5bZE98dwQ..wHMhnkGtGB-xt8NMCRPVcG6uY8O7ZmvRZpmNev6suA06M_sU2thg1qTgoxVV4Q9HzPeG9VVfG61nToxys9tg5BxkOLob8jAgkkjJ2dz-59F1HKolHwiyJ3UBvgtkgRcFflwY1-iUup1Uhzjz4Ajp-jBJ0StudLiGyFlVr_TmjzFImcJ_CbtnBEREDj1UL1jKrW604Xoa3taCM3s91HmvhZn1AVuU4kTdeULl_L3FC6hN8mDaK86eb3YzHncqTFg.AT1_GrVi93q8";
+esriConfig.apiKey = "AAPTa73U9Ad8w2_-RNikZnIECQw..k2NT_c9WgEg3Fmjo_r1D-Fhiw57k3eAq-pSldWMQP2jVWbf1weY4fWfCDErKpmn37fUxytbX4GcFXdBEMzc_r9u7Y1Y6PBnqgS3aBuaOM8FT2G9Li_wlszffEyopmoK5VWQuBK4hC9KYXPXeIlbKaCxiQBaYKCFVFalBw99gTDQMbSM1i3l2tFXqQFDPgpJU86ezvv4A6g_viF110jcSeYyhIhwhsagKt0Y9ScXWiD6T5jV--zpbZW-U2IDnrlE.AT1_GrVi93q8";
 // Initialize the map baselayer
 const map = new Map({
     basemap: "arcgis/community",
